@@ -1,58 +1,129 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# NexusAI
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="docs/screenshots/nexusai-chat.png" alt="NexusAI Chat Interface" width="100%">
 </p>
 
-## About Laravel
+<h1 align="center">NexusAI</h1>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+  <strong>AI Assistant Platform built for intelligent conversations, productivity, and modern AI workflows.</strong>
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<p align="center">
+  <img src="https://img.shields.io/badge/Laravel-Framework-red?style=for-the-badge&logo=laravel" alt="Laravel">
+  <img src="https://img.shields.io/badge/PHP-8.x-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+  <img src="https://img.shields.io/badge/TailwindCSS-UI-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/AI-Gemini-4285F4?style=for-the-badge&logo=google" alt="Gemini">
+</p>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## About NexusAI
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**NexusAI** is a modern AI chatbot platform designed to provide an intuitive interface for interacting with artificial intelligence.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+The application combines a clean conversational interface with conversation history, dashboard functionality, AI model selection, and a responsive user experience.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+NexusAI is designed as a foundation for building a larger AI platform with capabilities such as AI agents, external tools, automation, knowledge retrieval, and intelligent workflows.
 
-## Agentic Development
+---
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## ✨ Features
 
-```bash
-composer require laravel/boost --dev
+### 🤖 AI Chat
 
-php artisan boost:install
-```
+Interact with an AI assistant through a modern conversational interface.
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+- Real-time conversation interface
+- AI model selection
+- New conversation
+- Context-aware conversations
+- Prompt suggestions
+- Code assistance
+- Data analysis
+- General question answering
 
-## Contributing
+### 💬 Conversation Management
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Manage previous conversations from a centralized interface.
 
-## Code of Conduct
+- Conversation history
+- Search conversations
+- New chat
+- Persistent conversations
+- Conversation-based context
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 📊 Dashboard
 
-## Security Vulnerabilities
+Centralized dashboard for monitoring and accessing the application's core functionality.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Planned dashboard capabilities include:
 
-## License
+- Usage statistics
+- AI activity
+- Conversation analytics
+- Model usage
+- System status
+- Account information
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 🎨 Modern UI/UX
+
+NexusAI uses a modern dark interface focused on readability and productivity.
+
+Design characteristics:
+
+- Dark interface
+- Purple accent system
+- Responsive layout
+- Sidebar navigation
+- Modern cards
+- AI-focused interaction patterns
+- Desktop and mobile friendly
+
+### 🧠 AI Model Integration
+
+NexusAI is designed to integrate with modern Large Language Models (LLMs).
+
+The architecture can be extended to support:
+
+- Google Gemini
+- OpenAI
+- Anthropic
+- Local LLMs
+- Custom AI models
+
+---
+
+# 🏗️ Architecture
+
+NexusAI follows a modular application architecture.
+
+```text
+                    ┌─────────────────────┐
+                    │      NexusAI UI     │
+                    │   Chat / Dashboard  │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │    Laravel Backend  │
+                    │                     │
+                    │ Routes / Controllers│
+                    │ Services / Models   │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │     AI Service      │
+                    │                     │
+                    │   Gemini / LLM API  │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │      Database       │
+                    │                     │
+                    │ Users / Chats /     │
+                    │ Conversations      │
+                    └─────────────────────┘
