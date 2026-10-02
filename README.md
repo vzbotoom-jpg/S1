@@ -1,129 +1,97 @@
 # NexusAI
 
 <p align="center">
-  <img src="docs/screenshots/nexusai-chat.png" alt="NexusAI Chat Interface" width="100%">
-</p>
-
-<h1 align="center">NexusAI</h1>
-
-<p align="center">
-  <strong>AI Assistant Platform built for intelligent conversations, productivity, and modern AI workflows.</strong>
+  <img src="docs/screenshots/nexusai-chat.png" alt="Antarmuka chat NexusAI" width="100%">
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Laravel-Framework-red?style=for-the-badge&logo=laravel" alt="Laravel">
-  <img src="https://img.shields.io/badge/PHP-8.x-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
-  <img src="https://img.shields.io/badge/TailwindCSS-UI-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
-  <img src="https://img.shields.io/badge/AI-Gemini-4285F4?style=for-the-badge&logo=google" alt="Gemini">
+  <strong>Platform asisten AI untuk percakapan, pengelolaan pengetahuan, dan produktivitas.</strong>
 </p>
 
----
+<p align="center">
+  <img src="https://img.shields.io/badge/Laravel-13-red?logo=laravel" alt="Laravel 13">
+  <img src="https://img.shields.io/badge/PHP-8.3%2B-777BB4?logo=php&logoColor=white" alt="PHP 8.3 atau lebih baru">
+  <img src="https://img.shields.io/badge/UI-Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/AI-Google_Gemini-4285F4?logo=google" alt="Google Gemini">
+</p>
 
-## About NexusAI
+## Deskripsi Proyek
 
-**NexusAI** is a modern AI chatbot platform designed to provide an intuitive interface for interacting with artificial intelligence.
+NexusAI adalah aplikasi chatbot berbasis web yang menghubungkan pengguna dengan Google Gemini. Aplikasi ini menyediakan percakapan yang tersimpan, dashboard, autentikasi pengguna, serta pengelolaan akun dan administrasi.
 
-The application combines a clean conversational interface with conversation history, dashboard functionality, AI model selection, and a responsive user experience.
+## Fitur Utama
 
-NexusAI is designed as a foundation for building a larger AI platform with capabilities such as AI agents, external tools, automation, knowledge retrieval, and intelligent workflows.
+- Mengirim pesan ke asisten AI menggunakan Google Gemini.
+- Membuat, melihat, mengubah, menandai, dan menghapus percakapan.
+- Menghapus beberapa percakapan sekaligus.
+- Mendaftar, masuk, memverifikasi email, dan mengatur ulang kata sandi.
+- Mengelola profil, kata sandi, preferensi, dan data akun.
+- Menyediakan dashboard dan halaman administrasi untuk mengelola pengguna, percakapan, dan analitik.
 
----
+## Teknologi yang Digunakan
 
-## ✨ Features
+- **Backend:** PHP 8.3+, Laravel 13, Laravel Sanctum.
+- **AI:** Google Gemini melalui integrasi `google-gemini-php/laravel`.
+- **Frontend:** Blade, Bootstrap 5, Tailwind CSS 4, Sass, dan Vite.
+- **Database:** MySQL secara default; konfigurasi Laravel juga menyediakan SQLite dan beberapa database lain.
+- **Perangkat pengembangan:** Composer, Node.js, dan npm.
 
-### 🤖 AI Chat
+## Cara Instalasi dan Menjalankan Proyek
 
-Interact with an AI assistant through a modern conversational interface.
+### Prasyarat
 
-- Real-time conversation interface
-- AI model selection
-- New conversation
-- Context-aware conversations
-- Prompt suggestions
-- Code assistance
-- Data analysis
-- General question answering
+- PHP 8.3 atau lebih baru beserta ekstensi PHP yang dibutuhkan Laravel.
+- Composer.
+- Node.js dan npm.
+- MySQL yang berjalan (atau database lain yang didukung dan sudah dikonfigurasi).
+- API key Google Gemini dari [Google AI Studio](https://aistudio.google.com/app/apikey).
 
-### 💬 Conversation Management
+### Instalasi
 
-Manage previous conversations from a centralized interface.
+1. Clone repositori dan masuk ke direktori proyek:
 
-- Conversation history
-- Search conversations
-- New chat
-- Persistent conversations
-- Conversation-based context
+   ```bash
+   git clone <URL_REPOSITORI>
+   cd S1
+   ```
 
-### 📊 Dashboard
+2. Pasang dependensi PHP dan JavaScript:
 
-Centralized dashboard for monitoring and accessing the application's core functionality.
+   ```bash
+   composer install
+   npm install
+   ```
 
-Planned dashboard capabilities include:
+3. Siapkan konfigurasi aplikasi:
 
-- Usage statistics
-- AI activity
-- Conversation analytics
-- Model usage
-- System status
-- Account information
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-### 🎨 Modern UI/UX
+4. Ubah `.env` dan sesuaikan `DB_DATABASE`, `DB_USERNAME`, serta `DB_PASSWORD` dengan database lokal. Isi `GEMINI_API_KEY` dengan API key Gemini Anda.
 
-NexusAI uses a modern dark interface focused on readability and productivity.
+5. Jalankan migrasi database dan build aset frontend:
 
-Design characteristics:
+   ```bash
+   php artisan migrate
+   npm run build
+   ```
 
-- Dark interface
-- Purple accent system
-- Responsive layout
-- Sidebar navigation
-- Modern cards
-- AI-focused interaction patterns
-- Desktop and mobile friendly
+### Menjalankan aplikasi
 
-### 🧠 AI Model Integration
+Jalankan server Laravel, worker antrean, log, dan Vite dalam mode pengembangan:
 
-NexusAI is designed to integrate with modern Large Language Models (LLMs).
+```bash
+composer run dev
+```
 
-The architecture can be extended to support:
+Aplikasi dapat diakses di `http://localhost:8000`. Untuk menjalankan pengujian:
 
-- Google Gemini
-- OpenAI
-- Anthropic
-- Local LLMs
-- Custom AI models
+```bash
+composer test
+```
 
----
+## Lisensi
 
-# 🏗️ Architecture
-
-NexusAI follows a modular application architecture.
-
-```text
-                    ┌─────────────────────┐
-                    │      NexusAI UI     │
-                    │   Chat / Dashboard  │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │    Laravel Backend  │
-                    │                     │
-                    │ Routes / Controllers│
-                    │ Services / Models   │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │     AI Service      │
-                    │                     │
-                    │   Gemini / LLM API  │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │      Database       │
-                    │                     │
-                    │ Users / Chats /     │
-                    │ Conversations      │
-                    └─────────────────────┘
+Proyek ini menggunakan lisensi MIT, sebagaimana tercantum pada metadata proyek di `composer.json`.
